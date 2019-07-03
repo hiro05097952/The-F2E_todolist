@@ -1,0 +1,499 @@
+@charset "UTF-8";
+/* http://meyerweb.com/eric/tools/css/reset/ 
+   v2.0 | 20110126
+   License: none (public domain)
+*/
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed,
+figure, figcaption, footer, header, hgroup,
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  font: inherit;
+  vertical-align: baseline;
+}
+
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure,
+footer, header, hgroup, menu, nav, section {
+  display: block;
+}
+
+body {
+  line-height: 1;
+}
+
+ol, ul {
+  list-style: none;
+}
+
+blockquote, q {
+  quotes: none;
+}
+
+blockquote:before, blockquote:after,
+q:before, q:after {
+  content: '';
+  content: none;
+}
+
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+body {
+  background-color: #E1E1E1;
+  font-family: 'Roboto', sans-serif;
+}
+
+.header .nav {
+  width: 100%;
+  background-color: #4A90E2;
+}
+
+.header .nav ul {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+.header .nav ul li {
+  margin-right: 4%;
+  width: 160px;
+  height: 76px;
+  line-height: 76px;
+  text-align: center;
+}
+
+.header .nav ul li:nth-child(3) {
+  margin-right: 0;
+}
+
+.header .nav ul li:hover a {
+  color: white;
+}
+
+.header .nav ul li a {
+  color: #00408B;
+  text-decoration: none;
+  font-size: 24px;
+}
+
+.header .nav ul .now {
+  border-bottom: 5px solid #00408B;
+}
+
+.content {
+  padding: 2%;
+}
+
+.content .wrap_initial .title {
+  width: 620px;
+  margin: 0 auto 1.5em;
+  position: relative;
+}
+
+.content .wrap_initial .title input[type="text"] {
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  width: 100%;
+  height: 65px;
+  font-size: 24px;
+  padding-left: 6%;
+  border: 2px solid #C8C8C8;
+  border-radius: 5px;
+  outline: none;
+}
+
+.content .wrap_initial .title input[type="checkbox"] {
+  display: none;
+}
+
+.content .wrap_initial .title::before {
+  content: "+";
+  font-size: 30px;
+  position: absolute;
+  color: #999595;
+  top: 18px;
+  left: 15px;
+}
+
+.content .wrap_initial .editZone {
+  display: none;
+  height: 0;
+}
+
+.content .wrap_editing, .content .wrap_list_open, .content .wrap_list_close {
+  width: 620px;
+  height: 519px;
+  background-color: #F2F2F2;
+  border-radius: 5px;
+  -webkit-box-shadow: 0 4px 4px #C8C8C8;
+          box-shadow: 0 4px 4px #C8C8C8;
+  margin: 0 auto 2em;
+  position: relative;
+}
+
+.content .wrap_editing .title, .content .wrap_list_open .title, .content .wrap_list_close .title {
+  height: 76px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  border-bottom: 2px solid #C8C8C8;
+}
+
+.content .wrap_editing .title input[type="checkbox"], .content .wrap_list_open .title input[type="checkbox"], .content .wrap_list_close .title input[type="checkbox"] {
+  display: none;
+}
+
+.content .wrap_editing .title input[type="checkbox"]:checked + label, .content .wrap_list_open .title input[type="checkbox"]:checked + label, .content .wrap_list_close .title input[type="checkbox"]:checked + label {
+  background-color: #4A90E2;
+  border: 4px solid white;
+  -webkit-transition: background-color 0.3s;
+  transition: background-color 0.3s;
+}
+
+.content .wrap_editing .title input[type="checkbox"]:checked ~ input[type="text"], .content .wrap_list_open .title input[type="checkbox"]:checked ~ input[type="text"], .content .wrap_list_close .title input[type="checkbox"]:checked ~ input[type="text"] {
+  text-decoration: line-through;
+  color: #999595;
+}
+
+.content .wrap_editing .title label, .content .wrap_list_open .title label, .content .wrap_list_close .title label {
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  height: 24px;
+  width: 24px;
+  border-radius: 2px;
+  background-color: white;
+  margin-left: 1.5em;
+  margin-right: 0.8em;
+  -webkit-box-shadow: 1px 1px 4px #C8C8C8;
+          box-shadow: 1px 1px 4px #C8C8C8;
+}
+
+.content .wrap_editing .title input[type="text"], .content .wrap_list_open .title input[type="text"], .content .wrap_list_close .title input[type="text"] {
+  width: 70%;
+  font-size: 24px;
+  border: none;
+  background-color: #F2F2F2;
+  outline: none;
+}
+
+.content .wrap_editing .title a, .content .wrap_list_open .title a, .content .wrap_list_close .title a {
+  display: inline-block;
+  margin-right: 0.8em;
+}
+
+.content .wrap_editing .title .star, .content .wrap_list_open .title .star, .content .wrap_list_close .title .star {
+  background: url(../image/star.svg) center center no-repeat;
+  background-size: cover;
+  margin-left: auto;
+  height: 35px;
+  width: 35px;
+}
+
+.content .wrap_editing .title .edit, .content .wrap_list_open .title .edit, .content .wrap_list_close .title .edit {
+  background: url(../image/pen.svg) center center no-repeat;
+  height: 25px;
+  width: 25px;
+  background-size: cover;
+  margin-right: 2.5em;
+  margin-top: 2px;
+}
+
+.content .wrap_editing .title .information, .content .wrap_list_open .title .information, .content .wrap_list_close .title .information {
+  display: none;
+}
+
+.content .wrap_editing .editZone, .content .wrap_list_open .editZone, .content .wrap_list_close .editZone {
+  display: block;
+}
+
+.content .wrap_editing .editZone .data fieldset, .content .wrap_list_open .editZone .data fieldset, .content .wrap_list_close .editZone .data fieldset {
+  font-size: 20px;
+  width: 80%;
+  margin: 0 auto;
+}
+
+.content .wrap_editing .editZone .data fieldset label, .content .wrap_list_open .editZone .data fieldset label, .content .wrap_list_close .editZone .data fieldset label {
+  display: block;
+  line-height: 24px;
+  margin-bottom: 0.5em;
+  margin-top: 1.3em;
+  position: relative;
+}
+
+.content .wrap_editing .editZone .data fieldset label:nth-child(1)::before, .content .wrap_list_open .editZone .data fieldset label:nth-child(1)::before, .content .wrap_list_close .editZone .data fieldset label:nth-child(1)::before {
+  content: "";
+  position: absolute;
+  left: -1.1em;
+  top: 3px;
+  width: 15px;
+  height: 17px;
+  background: url(../image/calendar.svg) center center no-repeat;
+  background-size: cover;
+}
+
+.content .wrap_editing .editZone .data fieldset label:nth-child(4)::before, .content .wrap_list_open .editZone .data fieldset label:nth-child(4)::before, .content .wrap_list_close .editZone .data fieldset label:nth-child(4)::before {
+  content: "";
+  position: absolute;
+  left: -1.1em;
+  top: 3px;
+  width: 15px;
+  height: 17px;
+  background: url(../image/file.svg) center center no-repeat;
+  background-size: cover;
+}
+
+.content .wrap_editing .editZone .data fieldset label:nth-child(7)::before, .content .wrap_list_open .editZone .data fieldset label:nth-child(7)::before, .content .wrap_list_close .editZone .data fieldset label:nth-child(7)::before {
+  content: "";
+  position: absolute;
+  left: -1.1em;
+  top: 3px;
+  width: 15px;
+  height: 17px;
+  background: url(../image/comment.svg) center center no-repeat;
+  background-size: cover;
+}
+
+.content .wrap_editing .editZone .data fieldset #date, .content .wrap_editing .editZone .data fieldset #time, .content .wrap_list_open .editZone .data fieldset #date, .content .wrap_list_open .editZone .data fieldset #time, .content .wrap_list_close .editZone .data fieldset #date, .content .wrap_list_close .editZone .data fieldset #time {
+  width: 162px;
+  height: 35px;
+  border-radius: 2px;
+  border: none;
+}
+
+.content .wrap_editing .editZone .data fieldset input[type="file"], .content .wrap_list_open .editZone .data fieldset input[type="file"], .content .wrap_list_close .editZone .data fieldset input[type="file"] {
+  color: black;
+  display: inline-block;
+  text-indent: 101%;
+  overflow: hidden;
+  word-wrap: none;
+  margin-left: -5em;
+  margin-bottom: -2px;
+  outline: none;
+}
+
+.content .wrap_editing .editZone .data fieldset .update, .content .wrap_list_open .editZone .data fieldset .update, .content .wrap_list_close .editZone .data fieldset .update {
+  display: inline-block;
+  height: 32px;
+  width: 32px;
+  background-color: #C8C8C8;
+  border-radius: 2px;
+  text-align: center;
+  margin: 0;
+  line-height: 32px;
+  font-size: 20px;
+  color: white;
+}
+
+.content .wrap_editing .editZone .data fieldset .update:hover, .content .wrap_list_open .editZone .data fieldset .update:hover, .content .wrap_list_close .editZone .data fieldset .update:hover {
+  background-color: #4A90E2;
+}
+
+.content .wrap_editing .editZone .data fieldset textarea, .content .wrap_list_open .editZone .data fieldset textarea, .content .wrap_list_close .editZone .data fieldset textarea {
+  width: 90%;
+  height: 90px;
+  border: none;
+  padding: 2%;
+  font-size: 16px;
+}
+
+.content .wrap_editing .editZone button, .content .wrap_list_open .editZone button, .content .wrap_list_close .editZone button {
+  display: inline-block;
+  width: 50%;
+  height: 60px;
+  border: none;
+  font-size: 24px;
+  position: absolute;
+  bottom: 0;
+}
+
+.content .wrap_editing .editZone button[type="reset"], .content .wrap_list_open .editZone button[type="reset"], .content .wrap_list_close .editZone button[type="reset"] {
+  margin-right: -4px;
+  color: #D0021B;
+}
+
+.content .wrap_editing .editZone button[type="reset"]::before, .content .wrap_list_open .editZone button[type="reset"]::before, .content .wrap_list_close .editZone button[type="reset"]::before {
+  content: "×";
+  margin-right: 0.5em;
+  line-height: 24px;
+  font-size: 30px;
+}
+
+.content .wrap_editing .editZone button[type="reset"]:hover, .content .wrap_list_open .editZone button[type="reset"]:hover, .content .wrap_list_close .editZone button[type="reset"]:hover {
+  background-color: #F9F9F9;
+}
+
+.content .wrap_editing .editZone button[type="submit"], .content .wrap_list_open .editZone button[type="submit"], .content .wrap_list_close .editZone button[type="submit"] {
+  right: 0;
+  color: white;
+  background-color: #4A90E2;
+}
+
+.content .wrap_editing .editZone button[type="submit"]::before, .content .wrap_list_open .editZone button[type="submit"]::before, .content .wrap_list_close .editZone button[type="submit"]::before {
+  content: "＋";
+  margin-right: 0.5em;
+}
+
+.content .wrap_editing .editZone button[type="submit"]:hover, .content .wrap_list_open .editZone button[type="submit"]:hover, .content .wrap_list_close .editZone button[type="submit"]:hover {
+  background-color: #3982D7;
+}
+
+.content .contain {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
+.content .contain .wrap_list_close {
+  height: auto;
+  -webkit-box-shadow: none;
+          box-shadow: none;
+  -webkit-box-ordinal-group: 3;
+      -ms-flex-order: 2;
+          order: 2;
+}
+
+.content .contain .wrap_list_close .title {
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  padding-bottom: 0.7em;
+  border-bottom: none;
+}
+
+.content .contain .wrap_list_close .title .edit {
+  margin-right: 0.8em;
+}
+
+.content .contain .wrap_list_close .title .delete {
+  background: url(../image/delete.svg) center center no-repeat;
+  height: 25px;
+  width: 25px;
+  background-size: cover;
+  margin-left: 0.2em;
+  margin-right: 2em;
+}
+
+.content .contain .wrap_list_close .title .information {
+  position: absolute;
+  bottom: 0.5em;
+  left: 4.5em;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  color: #999595;
+}
+
+.content .contain .wrap_list_close .title .information li {
+  margin-right: 1em;
+  position: relative;
+  font-size: 14px;
+  color: black;
+  -webkit-filter: opacity(0.3);
+          filter: opacity(0.3);
+}
+
+.content .contain .wrap_list_close .title .information .date {
+  background: url(../image/calendar.svg) left center no-repeat;
+  background-size: contain;
+  height: 16px;
+  padding-left: 1.5em;
+  line-height: 1.2em;
+}
+
+.content .contain .wrap_list_close .title .information .file {
+  background: url(../image/file.svg) left center no-repeat;
+  background-size: contain;
+  height: 16px;
+  width: 14px;
+  margin-right: 1.3em;
+}
+
+.content .contain .wrap_list_close .title .information .comment {
+  background: url(../image/comment.svg) left center no-repeat;
+  background-size: contain;
+  height: 16px;
+  width: 14px;
+}
+
+.content .contain .wrap_list_close .editZone {
+  display: none;
+  height: 0;
+}
+
+.content .contain .wrap_list_open {
+  -webkit-box-ordinal-group: 3;
+      -ms-flex-order: 2;
+          order: 2;
+}
+
+.content .contain .wrap_list_open .title .information {
+  display: none;
+}
+
+.content .contain .wrap_list_open .title a {
+  margin-right: 0.8em;
+}
+
+.content .contain .wrap_list_open .title .delete {
+  background: url(../image/delete.svg) center center no-repeat;
+  height: 25px;
+  width: 25px;
+  background-size: cover;
+  margin-left: 0.2em;
+  margin-right: 2em;
+}
+
+.content .contain .wrap_list_open .title .edit {
+  background: url(../image/pen_b.svg) center center no-repeat;
+  background-size: cover;
+}
+
+.content .important.important {
+  -webkit-box-ordinal-group: 2;
+      -ms-flex-order: 1;
+          order: 1;
+}
+
+.content .important.important .title {
+  background-color: #FFF2DC;
+}
+
+.content .important.important .title input[type="text"] {
+  background-color: #FFF2DC;
+}
+
+.content .important.important .title .star {
+  background: url(../image/star_y.svg) center center no-repeat;
+  background-size: cover;
+}
+
+.content .checked.checked {
+  -webkit-box-ordinal-group: 4;
+      -ms-flex-order: 3;
+          order: 3;
+}
+/*# sourceMappingURL=all.css.map */

@@ -1,0 +1,129 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+
+.nav{
+    width: 100%;
+    height: 76px;
+    background: #4A90E2;
+}
+
+.nav ul{
+    display: flex;
+    justify-content: center;
+    text-align: center;
+}
+
+.nav li{
+    list-style: none;
+    width: 160px;
+    font-size: 24px;
+    line-height: 76px;
+    margin-right: 60px;
+}
+
+
+.nav a{
+    text-decoration: none;
+    color: #00408B;
+}
+
+.nav ul #nowpage a{
+    color:white;
+}
+
+.nav ul #nowpage{
+    border-bottom: 5px solid #00408B;
+}
+
+body{
+    background-color: #E1E1E1;
+}
+
+.main{
+    width: 620px;
+    position: absolute;
+    top: 100px;
+    left: 0;
+    right: 0;
+    margin: 0 auto;
+}
+
+.main #addtask{
+    width: 620px;
+    height: 65px;
+    border: 2px solid #C8C8C8;
+    border-radius: 5px;
+    font-size: 24px;
+    margin: 24px 0;
+}
+
+.main .box{
+    width: 620px;
+    height: 102px;
+    background: #F2F2F2;
+    display: grid;
+    grid-template-columns: 32px 40px 436px 112px;
+    grid-template-rows: 24px 43px 35px;
+}
+
+.main .box input{
+    grid-column: 2;
+    grid-row: 2;
+    zoom: 200%;
+    margin-top: 4px;
+}
+
+.main .box h2{
+    grid-column: 3;
+    grid-row: 2;
+    font-size: 28px;
+}
+
+.main .box .rightZone{
+    grid-column: 4;
+    grid-row: 2;
+    list-style: none;
+    margin-top: 6px;
+}
+.main .box .rightZone li:nth-child(1) a{
+    float: left;
+    width: 24px;
+    height: 24px;;
+    background: url(../image/star.svg) left center no-repeat;
+    background-size: 24px;
+}
+.main .box .rightZone li:nth-child(1) a:focus{
+    background: url(../image/star-yellow.svg) left center no-repeat;
+    background-size: 24px;
+}
+
+.main .box .rightZone li:nth-child(2) a{
+    float: right;
+    width: 24px;
+    height: 24px;;
+    background: url(../image/pen.svg) left center no-repeat;
+    background-size: 24px;
+    margin-right: 32px;
+}
+.main .box .rightZone li:nth-child(2) a:focus{
+    background: url(../image/pen-blue.svg) left center no-repeat;
+    background-size: 24px;
+}
+
+.main .box .bottomZone{
+    grid-column: 3;
+    grid-row: 3;
+    list-style: none;
+}
+.main .box .bottomZone li{
+    float: left;
+    padding: 5px;
+}
+
+.main .box .h2{
+    font-size: 24px;
+    font-weight: normal;
+}
+
