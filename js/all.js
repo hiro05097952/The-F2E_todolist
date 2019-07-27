@@ -358,6 +358,8 @@ function initial_check(e){
         initial_close(e);
     }else if(e.target.className === 'star'){
         setStar(e);
+    }else if(e.keyCode === 13){
+        getdata(e);
     }
 }
 
@@ -374,7 +376,7 @@ myTasks.addEventListener('click',function(e){
 
 // Add Task_區塊監聽
 wrap_initial.addEventListener('click',initial_check,false);
-
+wrap_initial.addEventListener('keydown',initial_check,false);
 
 
 // 下方清單
